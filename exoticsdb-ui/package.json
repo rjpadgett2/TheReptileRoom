@@ -30,7 +30,7 @@
     "angular2-cookie": "^1.2.6",
     "angular2-highcharts": "^0.5.5",
     "angular2-jwt": "^0.2.3",
-    "auth0-js": "^9.12.2",
+    "auth0-js": "^9.13.2",
     "bootstrap": "^4.4.1",
     "canvas-js": "^4.0.0",
     "chart.js": "^2.9.3",
