@@ -1,0 +1,50 @@
+
+<div class="container">
+
+  <table class="table table-inverse table-striped">
+    <tr class="thead-dark">
+      <th></th>
+      <th>Id</th>
+      <th>Species</th>
+      <th>Nick Name</th>
+      <th>Age</th>
+      <th>Weight</th>
+      <th>Length</th>
+      <th>shed</th>
+      <th>breeder</th>
+      <th class="text-right">Purchase Date</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let reptile of reptiles" (click)="selectReptile(reptile.id)">
+      <td class="highlight"><div></div></td>
+      <td>
+        {{reptile.id}}
+      </td>
+      <td>
+        {{reptile.scientificName}}
+      </td>
+      <td>
+        {{reptile.nickName}}
+      </td>
+      <td>
+        {{reptile.age}}
+      </td>
+      <td>
+        {{reptile.weight}}
+      </td>
+      <td>
+        {{reptile.length}}
+      </td>
+      <td>
+        {{reptile.shed}}
+      </td>
+      <td >
+        {{reptile.breeder}}
+      </td>
+      <td>
+        {{reptile.purchaseDate}}
+      </td>
+      <td class="highlight"><div></div></td>
+    </tr>
+  </table>
+</div>

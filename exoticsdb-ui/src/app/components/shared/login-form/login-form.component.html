@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h2 class="modal-title" id="modal-basic-title">Login</h2>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <div class="container">
+  <div class="row">
+
+    <div class="col-md-6 login-container">
+      <h4 style="margin: auto">Please Fill In all Fields </h4>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">UserName:</label>
+          <input type="text" class="form-control" formControlName="username" id="username" autocomplete="off">
+          <div *ngIf="username.invalid && (username.dirty || username.touched)">
+            <app-form-error
+              *ngIf="username.errors.required"
+              [text-content]="'Username is Required'"
+            ></app-form-error>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" formControlName="password" id="pwd" autocomplete="off">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <app-form-error
+              *ngIf="password.errors.required"
+              [text-content]="'Username is Required'"
+            ></app-form-error>
+          </div>
+        </div>
+        <button class="btn btn-success btn-block" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </div>
+  </div>
+
+  </div>
+</div>

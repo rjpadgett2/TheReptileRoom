@@ -1,0 +1,67 @@
+
+  <div class="modal-header">
+    <h4 class="modal-title text-center" id="modal-basic-title">Add Reptile</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="container">
+      <form [formGroup]="reptileForm" (ngSubmit)="submitRegistration()">
+        <div class = "form-group">
+          <label>Is this Animal Meant to Be  Breeder?</label>
+          <div>
+            <label>Yes</label>
+            <input type="radio" class="form-control" name="breeder" [value]=true>
+          </div>
+          <div>
+            <label>No</label>
+            <input type="radio" class="form-control" name="breeder" [value]=false>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Scientific Name</label>
+          <select class="form-control" formControlName="scientificName" name="scientificName" id="scientificName"required>
+            <option *ngFor="let specie of species"
+                    [value]="specie">
+              {{specie}}
+            </option>
+          </select>
+          <div *ngIf="scientificName.invalid && (scientificName.dirty || scientificName.touched)">
+            <app-form-error
+              *ngIf="scientificName.errors.required"
+              [text-content]="'Email is Required'"
+            ></app-form-error>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-2 col-form-label">Nick Name</label>
+          <input type="text" class="form-control has-warning" formControlName="nickName" name="nickName"/>
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="text" class="form-control" formControlName="age" name="age"/>
+        </div>
+        <div class="form-group">
+          <label>Weight</label>
+          <input type="text" class="form-control" formControlName="weight" name="weight"/>
+        </div>
+        <div class="form-group">
+          <label>length</label>
+          <input type="number" class="form-control" formControlName="length" name="length"/>
+        </div>
+        <div class="form-group">
+          <label>Purchase Date</label>
+          <input type="text" class="form-control" formControlName="purchaseDate" name="purchaseDate" required/>
+        </div>
+
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Save click')">Ok</button>
+  </div>
+

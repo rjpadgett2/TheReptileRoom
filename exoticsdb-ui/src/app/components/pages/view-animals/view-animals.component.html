@@ -1,0 +1,72 @@
+
+    <!-- The Grid -->
+    <div class="w3-row-padding mt-5">
+
+      <!-- Left Column -->
+      <div class="w3-third">
+
+        <div class="w3-white w3-text-grey w3-card-4">
+          <div class="w3-display-container">
+
+          </div>
+          <div class="w3-container">
+
+            <div class = "row">
+              <p class=" col w3-large"><b><fa-icon class="fa-sm" [icon]="faUtensils"></fa-icon> Diet</b></p>
+              <button (click)="addFeeder()" type="button" class=" col btn btn btn-success btn-lg">Add Food Item</button>
+            </div>
+             <app-pie-chart
+              [labels]="labels"
+              [data]="data"
+             ></app-pie-chart>
+            <br>
+
+            <p class="w3-large w3-text-theme"><b><fa-icon class="fa-sm" [icon]="faSeedling"></fa-icon> Growth & Food Consumption</b></p>
+            <app-line-chart></app-line-chart>
+            <br>
+          </div>
+        </div><br>
+
+        <!-- End Left Column -->
+      </div>
+
+      <!-- Right Column -->
+      <div class="w3-twothird">
+
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <div class="row">
+            <h2 *ngIf="reptiles.nickName" class="col w3-text-grey w3-padding-16"><fa-icon class="fa-sm" [icon]="faFileSignature"></fa-icon> {{reptiles.nickName}}</h2>
+            <h2 class="col w3-text-grey w3-padding-16"><fa-icon class="fa-sm" [icon]="faFileSignature"></fa-icon> {{reptiles.scientificName}}</h2>
+          </div>
+
+<!--          <div class="w3-container">-->
+<!--            <h5 class="w3-opacity"><b>Profile</b></h5>-->
+<!--            <p class = "h4 mt-2"><fa-icon class="fa-sm" [icon]="faFileSignature"></fa-icon> {{reptiles.nickName}}</p>-->
+<!--            <p class = "h5"><fa-icon class="fa-sm" [icon]="faCalendarAlt"></fa-icon> {{this.reptiles.purchaseDate}}</p>-->
+<!--            <p class = "h5"><fa-icon class="fa-sm" [icon]="faRuler"></fa-icon> {{reptiles.length}}</p>-->
+<!--            <p class = "h5"><fa-icon class="fa-sm" [icon]="faWeight"></fa-icon> {{reptiles.weight}}</p>-->
+<!--            <p class = "h5" *ngIf="reptiles.breeder"><fa-icon class="fa-sm" [icon]="faPaw"></fa-icon> Breeder</p>-->
+<!--            <p class = "h5" *ngIf="!(reptiles.breeder)"><fa-icon class="fa-sm" [icon]="faHandshake"></fa-icon> Pet</p>-->
+<!--            <p class = "h5"><fa-icon class="fa-sm" [icon]="faSeedling"></fa-icon> {{reptiles.age}}</p>-->
+<!--            <hr>-->
+<!--          </div>-->
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+            <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+            <hr>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+          </div>
+        </div>
+
+
+        <!-- End Right Column -->
+      </div>
+
+      <!-- End Grid -->
+    </div>
+

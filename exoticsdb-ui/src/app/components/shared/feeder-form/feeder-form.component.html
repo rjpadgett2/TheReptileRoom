@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h4 class="modal-title text-center" id="modal-basic-title">Add Feeder</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <div class="container">
+    <form [formGroup]="feederForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="col-md-2 col-form-label">Date Offered</label>
+        <input type="text" class="form-control has-warning" formControlName="dateOffered" name="dateOffered"/>
+      </div>
+      <div class="form-group">
+        <label>Species</label>
+        <input type="text" class="form-control" formControlName="species" name="species"/>
+      </div>
+      <div class="form-group">
+        <label>Length</label>
+        <input type="text" class="form-control" formControlName="length" name="length"/>
+      </div>
+      <div class="form-group">
+        <label>Weight</label>
+        <input type="number" class="form-control" formControlName="weight" name="weight"/>
+      </div>
+
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Save click')">Ok</button>
+</div>
+

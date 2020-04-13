@@ -1,0 +1,90 @@
+<div class="modal-header">
+  <h4 class="text-center modal-title" id="modal-basic-title">Register New Account</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <div class="container">
+    <div class="col-md-12 user-container">
+      <h2 class="text-center">Please Fill In All Fields</h2>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">User Name:</label>
+          <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+          <app-form-error
+            *ngIf="username.invalid && (username.dirty || username.touched)"
+            [text-content]="'Username is Required'"
+          ></app-form-error>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <app-form-error
+              *ngIf="password.errors.required"
+              [text-content]="'Password is Required'"
+            ></app-form-error>
+            <app-form-error
+              *ngIf="password.errors.minlength"
+              [text-content]="'Password Must be at least 6 characters long'"
+            ></app-form-error>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Confirm Password:</label>
+          <input type="password" formControlName="confirmPassword" placeholder="password" name="confirmPassword" class="form-control" id="confirmPassword">
+          <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+            <app-form-error
+              *ngIf="confirmPassword.errors.required"
+              [text-content]="'Confirm Password is Required'"
+            ></app-form-error>
+            <app-form-error
+              *ngIf="confirmPassword.errors.mustMatch"
+              [text-content]="'Passwords must match'"
+            ></app-form-error>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input formControlName="firstName" placeholder="John" name="firstName" class="form-control" id="firstName">
+          <app-form-error
+            *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+            [text-content]="'First Name is Required'"
+          ></app-form-error>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input formControlName="lastName" placeholder="Doe" name="lastName" class="form-control" id="lastName">
+          <app-form-error
+            *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+            [text-content]="'Last Name is Required'"
+          ></app-form-error>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" formControlName="email" placeholder="jdoe@domain.com" name="email" class="form-control" id="email">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <app-form-error
+              *ngIf="email.errors.required"
+              [text-content]="'Email is Required'"
+            ></app-form-error>
+            <app-form-error
+              *ngIf="email.errors.pattern"
+              [text-content]="'Please Provide a Valid Email Address'"
+            ></app-form-error>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
