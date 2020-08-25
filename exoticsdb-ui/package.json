@@ -37,7 +37,7 @@
     "cors": "^2.8.5",
     "express-http-proxy": "^1.6.0",
     "font-awesome": "^4.7.0",
-    "highcharts": "^8.0.4",
+    "highcharts": "^8.1.1",
     "moment": "^2.24.0",
     "ng2-charts": "^2.3.0",
     "node-waf": "^1.0.0",
